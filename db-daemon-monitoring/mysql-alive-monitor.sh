@@ -3,7 +3,6 @@
 IS_ALIVE="mysqld is alive"
 RESULT=`mysqladmin --defaults-extra-file=filepath ping 2>&1`
 
-# "mysqld is alive"以外はslackに通知
 if [ "$IS_ALIVE" != "$RESULT" ]; then
 curl=`cat <<EOS
 curl
